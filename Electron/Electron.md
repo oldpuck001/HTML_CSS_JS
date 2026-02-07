@@ -1,5 +1,24 @@
 Electron.md
 
+
+
+() 安裝Node.js和npm（使用Electron框架的準備工作）
+
+    Node.js官方網站: https://nodejs.org/
+    使用Windows系统安装程序时，在第一个界面将添加到环境变量的选择框选中。
+
+    檢查是否已經安裝的指令：
+    node -v
+    npm -v
+    
+    如過執行結果顯示版本號，說明 Node.js 和 npm 已經安裝成功。
+
+    npm (Node Package Manager) 是隨 Node.js 一起安裝的包管理工具，它的主要作用包括以下幾個方面：1.包管理；2.項目初始化；3.包發佈與分享；4.本地與全局安裝；5.依賴管理；6.運行腳本。
+
+
+
+
+
 初始化Electron框架
 
 在終端中，創建一個新目錄並進入該目錄，然後初始化一個新的 npm 項目：
