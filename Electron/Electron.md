@@ -1,6 +1,6 @@
 Electron.md
 
-
+# 開發環境：
 
 () 安裝Node.js和npm（使用Electron框架的準備工作）
 
@@ -16,18 +16,18 @@ Electron.md
     npm (Node Package Manager) 是隨 Node.js 一起安裝的包管理工具，它的主要作用包括以下幾個方面：1.包管理；2.項目初始化；3.包發佈與分享；4.本地與全局安裝；5.依賴管理；6.運行腳本。
 
 
-
-
-
-初始化Electron框架
+# 初始化Electron框架：
 
 在終端中，創建一個新目錄並進入該目錄，然後初始化一個新的 npm 項目：
+
     mkdir my-electron-app
     cd my-electron-app
     npm init -y
     這樣會創建一個包含默認配置的 package.json 文件。
 
-安裝 Electron：
+
+# 安裝 Electron：
+
     npm install electron --save-dev
     這會將 Electron 安裝為開發依賴，並更新 package.json 文件中的 devDependencies。
 
@@ -52,6 +52,37 @@ Electron.md
 在項目根目錄下創建 index.html、index.css、index.js 文件，這是應用程序的用戶界面部分。
 
 在 VS Code 中打開終端，然後運行以下命令來啟動 Electron 應用：
+
     npm start
 
 運行成功，初始化完成。
+
+
+# 打包程序（macOS系統環境）
+
+運行下列命令針對當前項目安裝electron-builder：
+
+npm i -D electron-builder
+
+{
+    "build": {
+        "appID": "com.my.app.id",
+        "mac": {
+            "category": "public.app-category.utilities"
+        }
+    }
+}
+
+更新package.json文件
+
+{
+    "scripts": {
+        "start": "electron .",
+        "build:macos": "electron-builder --macos --dir",
+        "dist:macos": "electron-builder --macos"
+    }
+}
+
+打開VScode中的Terminal窗口，並運行：
+
+npm run build:macos
